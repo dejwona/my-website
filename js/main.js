@@ -1,4 +1,9 @@
 $(document).ready(function() {
+    var $myContainer = $('#myContainer');
+    var $secondPage = $myContainer.find('.secondPage');
+    var $pics = $secondPage.find('.pic');
+    var $toolbar = $('.toolbar');
+    var $portfolio = $toolbar.find('[data-menuanchor="secondPage"]');
 
 
     $('#fullpage').fullpage({
@@ -6,7 +11,7 @@ $(document).ready(function() {
         //Navigation
         menu: '#menu',
         lockAnchors: false,
-        anchors:['firstPage', 'secondPage', 'thirdPage', 'fourthPage'],
+        anchors:['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
         navigation: false,
         navigationPosition: 'right',
         navigationTooltips: ['firstSlide', 'secondSlide'],
@@ -65,12 +70,20 @@ $(document).ready(function() {
 
         //events
         onLeave: function(index, nextIndex, direction){},
-        afterLoad: function(anchorLink, index){},
+        afterLoad: function(anchorLink, index){
+            if(index == 2){
+            console.log("Section 3 ended loading");
+            }
+        },
         afterRender: function(){},
         afterResize: function(){},
         afterResponsive: function(isResponsive){},
         afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
         onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+
+
     });
+
+
 });
 

@@ -68,59 +68,59 @@ p {
     transform-origin: 50% 90%;
 }
 .letter:nth-child(3) {
-    animation: flipUp 0.2s 1.4s ease both;
+    animation: flipUp 0.2s 1.2s ease both;
 }
 .letter:nth-child(4) {
-    animation: flipUp 0.2s 1.6s ease both;
+    animation: flipUp 0.2s 1.3s ease both;
 }
 .letter:nth-child(5) {
-    animation: flipUp 0.2s 1.8s ease both;
+    animation: flipUp 0.2s 1.4s ease both;
 }
 .letter:nth-child(6) {
-    animation: flipUp 0.2s 2s ease both;
+    animation: flipUp 0.2s 1.5s ease both;
 }
 .letter:nth-child(7) {
-    animation: flipUp 0.2s 2.4s ease both;
+    animation: flipUp 0.2s 1.6s ease both;
 }
 .letter:nth-child(8) {
-    animation: flipUp 0.2s 2.6s ease both;
+    animation: flipUp 0.2s 1.7s ease both;
 }
 .letter:nth-child(9) {
-    animation: flipUp 0.2s 2.8s ease both;
+    animation: flipUp 0.2s 1.8s ease both;
     padding-left: 0.1em;
 }
 .letter:nth-child(10) {
-    animation: flipUp 0.2s 3s ease both;
+    animation: flipUp 0.2s 1.9s ease both;
 }
 .letter:nth-child(11) {
-    animation: flipUp 0.2s 3.2s ease both;
+    animation: flipUp 0.2s 2s ease both;
 }
 .letter:nth-child(13) {
-    animation: flipUp 0.2s 3.4s ease both;
+    animation: flipUp 0.2s 2.1s ease both;
 }
 .letter:nth-child(14) {
-    animation: flipUp 0.2s 3.6s ease both;
+    animation: flipUp 0.2s 2.2s ease both;
 }
 .letter:nth-child(15) {
-    animation: flipUp 0.2s 3.8s both;
+    animation: flipUp 0.2s 2.3s both;
 }
 .letter:nth-child(16) {
-    animation: flipUp 0.2s 4s both;
+    animation: flipUp 0.2s 2.4s both;
 }
 .letter:nth-child(17) {
-    animation: flipUp 0.2s 4.2s both;
+    animation: flipUp 0.2s 2.5s both;
 }
 .letter:nth-child(18) {
-    animation: flipUp 0.2s 4.4s both;
+    animation: flipUp 0.2s 2.6s both;
 }
 .letter:nth-child(19) {
-    animation: flipUp 0.2s 4.6s both;
+    animation: flipUp 0.2s 2.7s both;
 }
 .letter:nth-child(20) {
-    animation: flipUp 0.2s 4.8s both;
+    animation: flipUp 0.2s 2.8s both;
 }
 .letter:nth-child(21) {
-    animation: flipUp 0.2s 5s both;
+    animation: flipUp 0.2s 2.9s both;
 }
 
 @keyframes flipUp {
@@ -128,8 +128,8 @@ p {
     to {transform: rotateX(0deg);}
 }
 .circle {
-	margin: 0 auto;
-	display: flex;
+    margin: 0 auto;
+    display: flex;
     justify-content: space-around;
     width: 15em;
     height: 15em;
@@ -142,7 +142,7 @@ p {
     }
 
 @keyframes growCicle {
-	0% {
+    0% {
         -webkit-transform: scale(0); -ms-transform: scale(0); -o-transform: scale(0); transform: scale(0);  
     }
     100% {
@@ -178,8 +178,7 @@ ul {
     text-decoration: none;
     color: white;
 }
-
-#menu li a:active, #menu li a:hover {
+#menu li a:hover, #menu li.active a {
     color: #b60404;
 }
 .logo {
@@ -201,7 +200,6 @@ ul {
     left: 0;
     right: 0;
 }
-
 .lineA {
     position: relative;
     left: 0%;
@@ -211,7 +209,6 @@ ul {
     background-color: rgba(0,0,0,.3);
     border-radius: 6vh;
 }
-
 .lineB {
     position: relative;
     margin: 4vh;
@@ -220,7 +217,6 @@ ul {
     background-color: rgba(255,255,255,.2);
     border-radius: 4vh;
 }
-
 .lineC,
 .lineD{
     position: absolute;
@@ -233,12 +229,10 @@ ul {
 .lineD{
     margin: -4vh;
 }
-
 .d1 {
     margin-right: 10%;  
     animation: anim1 9s infinite linear;
 }
-
 .d2 {
     margin-left: 30%;   
     animation: anim2 5s infinite linear;
@@ -248,7 +242,6 @@ ul {
     margin-left: 60%;   
     animation: anim2 7s infinite linear;
 }
-
 .d4 {
     margin-left: 30%;   
     animation: anim4 11s infinite linear;
@@ -276,7 +269,6 @@ ul {
         left: 100%;
     }   
 }
-
 @keyframes anim2 {
     0%{
         left: 100%;
@@ -299,7 +291,6 @@ ul {
         margin: -7vh;
     }   
 }
-
 @keyframes anim4{
     0%{
         left: -30%;
@@ -322,17 +313,33 @@ ul {
     display: flex;
     flex-direction: column; 
 }
-.hideImg {
+.hideImg, .tab {
     display: none;
+}
+img {
+    max-width:100%;
 }
 .pic {
     max-width: 100%;
     height: auto;
 }
-img {
-    max-width:100%;
+.pic:nth-child(1) {
+    animation: animPic 9s ease 2s;
+} 
+.pic:nth-child(2) {
+    animation: animPic 9s ease 2.2s;
+} 
+.pic:nth-child(3) {
+    animation: animPic 9s ease 2.6s;
 }
-
+@keyframes animPic {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }   
+}
 /*o mnie*/
 .section {
     width: 100%;
@@ -359,7 +366,6 @@ img {
    padding: 0.5em; 
    width: 94%;
 }
-
 [type="submit"] {
     width: 100%;
     margin-top: 2%;
@@ -367,11 +373,14 @@ img {
 .infoForm {
     display: none;
 }
-.footer {
-    background-color: black;
+footer {
+    background-color: gray;
     padding: 20px;
     color: white;
-    height: 300px;
+    height: 50px;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: flex-end;
 }
 
 /*
@@ -548,11 +557,22 @@ textarea {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
-@media screen and (min-device-width: 560px) and (max-device-width: 768px) { 
-	
+@media screen and (min-width: 560px) {
+.gallery {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: content-box;
 }
-@media only screen and (min-width: 560px) {
-    /* Style adjustments for viewports that meet the condition */
+.pic {
+    max-width: 48%;
+    max-height:100%
+}
+.tab {
+    display: block;
+}
 h1 {
     font-size: 2em;
 }
@@ -565,7 +585,7 @@ p {
     font-size: 2em;
 }
 .front {
-	text-align: center;
+    text-align: center;
     width: 5em;
     font-size: 4em;
     line-height: 0.9em;
@@ -590,24 +610,7 @@ p {
 .wybraneTitle {
     padding: 0 7%;
 }
-.gallery {
-	max-width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    box-sizing: content-box;
-}
-.pic {
-    max-width: 33.3%;
-    max-height:100%
-}
-.pic-all {
-    margin: 0;
-}
-.hideImg {
-	display: block;
-}
+
 /*o mnie*/
 .ico {
     width: 100px;
@@ -642,6 +645,28 @@ p {
 }
 .error {
     color: #b60404;
+}
+
+}
+@media only screen and (min-width: 1000px) {
+    /* Style adjustments for viewports that meet the condition */
+.gallery {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: content-box;
+}
+.pic {
+    max-width: 33.3%;
+    max-height:100%
+}
+.pic-all {
+    margin: 0;
+}
+.hideImg {
+    display: block;
 }
 
 }
