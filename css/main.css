@@ -11,13 +11,17 @@
    ========================================================================== */
 @font-face {
     font-family: 'BebasNeue';
-    src: url('../font/BebasNeue Regular.ttf');
+    src: url('../font/BebasNeuewebfont.eot'),
+         url('../font/BebasNeue Regular.ttf');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Brain Flower';
-    src: url('../font/Brain Flower Euro.ttf');
+    src: url('../font/Brain Flower.eot'),
+         url('../font/Brain Flower.otf'),
+         url('../font/Brain Flower.woff'),
+         url('../font/Brain Flower Euro.ttf');
     font-weight: normal;
     font-style: normal;
 }
@@ -28,7 +32,7 @@ html {
 }
 h1 {
     font-size: 1.5em;
-    font-family: 'BebasNeue';
+    font-family: 'BebasNeue', Arial, sans-serif;
 }
 h3 {
     line-height: 1em; 
@@ -40,7 +44,7 @@ p {
 }
 /*first page*/
 .junior {
-    font-family: 'Brain Flower';
+    font-family: 'Brain Flower', Arial, sans-serif;
     text-align: center;
     align-self: center;
     z-index: 100;
@@ -49,7 +53,7 @@ p {
     color: #B9B9B9;   
 }
 .front {
-    font-family: 'BebasNeue';
+    font-family: 'BebasNeue', Arial, sans-serif;
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
@@ -152,7 +156,7 @@ p {
 
 /* menu*/
 #menu {
-    font-family: 'BebasNeue';
+    font-family: 'BebasNeue', Arial, sans-serif;
     position: fixed;
     top: 0;
     left:0;
@@ -310,11 +314,16 @@ ul {
     padding: 0 7%;   
 }
 .gallery {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
     display: flex;
     flex-direction: column; 
 }
-.hideImg, .tab {
+.hideImg {
     display: none;
+    height: auto;
 }
 img {
     max-width:100%;
@@ -322,22 +331,25 @@ img {
 .pic {
     max-width: 100%;
     height: auto;
+    height: 0
 }
 .pic:nth-child(1) {
-    animation: animPic 9s ease 2s;
+    animation: animPic 2s ease 2s both;
 } 
 .pic:nth-child(2) {
-    animation: animPic 9s ease 2.2s;
+    animation: animPic 2s ease 2.2s both;
 } 
 .pic:nth-child(3) {
-    animation: animPic 9s ease 2.6s;
+    animation: animPic 2s ease 2.6s both;
 }
 @keyframes animPic {
-    0%{
+    from{
         opacity: 0;
+        height: 0;
     }
-    100% {
+    to{
         opacity: 1;
+        height: 100%;
     }   
 }
 /*o mnie*/
@@ -558,21 +570,6 @@ textarea {
    Modify as content requires.
    ========================================================================== */
 @media screen and (min-width: 560px) {
-.gallery {
-    max-width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    box-sizing: content-box;
-}
-.pic {
-    max-width: 48%;
-    max-height:100%
-}
-.tab {
-    display: block;
-}
 h1 {
     font-size: 2em;
 }
@@ -610,11 +607,39 @@ p {
 .wybraneTitle {
     padding: 0 7%;
 }
+.gallery {
+    max-width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    align-items: center;
+    -ms-box-sizing: border-box;
+    box-sizing: content-box;
+}
+.pic {
+    width: 48%;
+    max-height:100%;
+}
+.pic:nth-child(4) {
+    animation: animPic 2s ease 2.8s both;
+}
+.tab {
+    display: block;
+    max-width: 48%;;
+    height: 0;
+    height: auto;
+}
 
 /*o mnie*/
 .ico {
     width: 100px;
-    height: 100px;
+    height: auto;
 }
 .about-all {
     display: flex;
@@ -652,8 +677,14 @@ p {
     /* Style adjustments for viewports that meet the condition */
 .gallery {
     max-width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -ms-flex-direction: row;
     flex-direction: row;
     align-items: center;
     box-sizing: content-box;
@@ -667,6 +698,19 @@ p {
 }
 .hideImg {
     display: block;
+}
+
+.pic:nth-child(5) {
+    animation: animPic 2s ease 3s both;
+}
+.pic:nth-child(6) {
+    animation: animPic 2s ease 3.2s both;
+}
+.hideImg {
+    display: block;
+    max-width: 33.3%;;
+    height: 0;
+    height: auto;
 }
 
 }
