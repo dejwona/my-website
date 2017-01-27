@@ -1,5 +1,47 @@
 $(function() {
-    console.log('dziala');
+
+    var $myContainer = $('#myContainer');
+    var $secondPage = $myContainer.find('.secondPage');
+    var $gallery = $secondPage.find('.gallery');
+    var $pic = $gallery.find('.pic');
+    var $img = $pic.find('img');
+ 
+
+    var $newInfo = $pic.find('.newInfo');
+    var $newInfoText = $pic.find('.newInfoText');
+    $newInfo.hide();
+  
+
+
+        $img.on('mouseover', function(e) {
+            e.preventDefault();
+            console.log('jest');
+
+            var i = $(this).prev().show();
+
+            $newInfo.not(i).hide();
+ 
+            $(this).animate({
+                opacity: 0.20,
+            }, 500);
+
+        })
+        $img.on('mouseout', function(e) {
+            e.preventDefault();
+
+            var i = $(this).prev().hide();
+
+            $newInfo.not(i).hide();
+
+            $(this).animate({
+                opacity: 1,
+            }, 500);
+
+        })
+
+
+
+
 
     var $form = $('#contactForm');
     var $nameInput = $form.find('#nameInput');
@@ -11,7 +53,6 @@ $(function() {
     
     $form.on('submit', $submit, function(event){
         event.preventDefault();
-        console.log('click');
         var $nameInputNew = $nameInput.val();
         var $emailInputNew = $emailInput.val();
         var $messageInputNew = $messageInput.val();
@@ -22,36 +63,28 @@ $(function() {
         var errorMsg = '';
         
         if ($nameInputNew.length > 5)  {
-            console.log('name OK');
         } else {
             errorMsg += inputMessage[0] + '<br/>';
             isError = true;
-            console.log('name FAIL');
         }
 
         if (emailReg.test($emailInputNew) || 0) {
-            console.log('email OK');
         } else {
             errorMsg += inputMessage[1] + '<br/>';
             isError = true;
-            console.log('email FAIL');
         } 
 
         if ($messageInputNew.length > 10) {
-            console.log('msg OK');
         } else {
             errorMsg += inputMessage[2] + '<br/>';
             isError = true;
-            console.log('msg FAIL');
         } 
         
         if(isError) {
             $error.html(errorMsg);
-            console.log('return False');
             return false;
         } else {
             $error.html('');
-            console.log('return TRUE');
             return true;
         }       
     })

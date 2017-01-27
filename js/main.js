@@ -70,11 +70,7 @@ $(document).ready(function() {
 
         //events
         onLeave: function(index, nextIndex, direction){},
-        afterLoad: function(anchorLink, index){
-            if(index == 2){
-            console.log("Section 3 ended loading");
-            }
-        },
+        afterLoad: function(anchorLink, index){},
         afterRender: function(){},
         afterResize: function(){},
         afterResponsive: function(isResponsive){},

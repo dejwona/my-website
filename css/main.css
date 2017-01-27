@@ -313,6 +313,26 @@ ul {
 .wybraneTitle {
     padding: 0 7%;   
 }
+.newInfo {
+    z-index: 1000;
+    position: absolute;
+    top:50%;
+    left:27%;
+    font-size: 1.5em;
+    font-family: 'BebasNeue', Arial, sans-serif;
+}
+a .newInfo  {
+    cursor: pointer;
+}
+.newInfoText {
+    z-index: 1000;
+    position: absolute;
+    top:50%;
+    left:27%;
+    font-size: 1.5em;
+    font-family: 'BebasNeue', Arial, sans-serif;
+    font-weight: 100;
+}
 .gallery {
     display: -webkit-flex;
     display: -moz-flex;
@@ -329,18 +349,20 @@ img {
     max-width:100%;
 }
 .pic {
+    z-index: 0;
     max-width: 100%;
     height: auto;
-    height: 0
+    height: 0;
+    position: relative;
 }
 .pic:nth-child(1) {
-    animation: animPic 2s ease 2s both;
+    animation: animPic 1s ease 2s both;
 } 
 .pic:nth-child(2) {
-    animation: animPic 2s ease 2.2s both;
+    animation: animPic 1s ease 2.2s both;
 } 
 .pic:nth-child(3) {
-    animation: animPic 2s ease 2.6s both;
+    animation: animPic 1s ease 2.6s both;
 }
 @keyframes animPic {
     from{
@@ -352,6 +374,7 @@ img {
         height: 100%;
     }   
 }
+
 /*o mnie*/
 .section {
     width: 100%;
