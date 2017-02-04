@@ -321,7 +321,7 @@ ul {
     font-size: 1.5em;
     font-family: 'BebasNeue', Arial, sans-serif;
 }
-a .newInfo  {
+.newInfo  {
     cursor: pointer;
 }
 .newInfoText {

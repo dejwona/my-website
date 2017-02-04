@@ -4,7 +4,7 @@ $(function() {
     var $secondPage = $myContainer.find('.secondPage');
     var $gallery = $secondPage.find('.gallery');
     var $pic = $gallery.find('.pic');
-    var $img = $pic.find('img');
+    var $img = $pic.find('a');
  
 
     var $newInfo = $pic.find('.newInfo');
@@ -12,35 +12,19 @@ $(function() {
     $newInfo.hide();
   
 
-
-        $img.on('mouseover', function(e) {
-            e.preventDefault();
-            console.log('jest');
-
-            var i = $(this).prev().show();
-
-            $newInfo.not(i).hide();
- 
-            $(this).animate({
-                opacity: 0.20,
+        $pic.mouseenter(function() {
+            $(this).children('a').children('img').animate({
+                opacity: '0.2'
             }, 500);
+            $(this).children('.newInfo').show();
+        });
 
-        })
-        $img.on('mouseout', function(e) {
-            e.preventDefault();
-
-            var i = $(this).prev().hide();
-
-            $newInfo.not(i).hide();
-
-            $(this).animate({
-                opacity: 1,
+        $pic.mouseleave(function(){
+            $(this).children('a').children('img').animate({
+            opacity: '1'
             }, 500);
-
-        })
-
-
-
+            $(this).children('.newInfo').hide();
+        });
 
 
     var $form = $('#contactForm');
