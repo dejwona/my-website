@@ -33,6 +33,7 @@ $(function() {
     var $messageInput = $form.find('#messageInput');
 
     var $error = $form.find('.error');
+	var $confirm = $form.find('.confirm');
     var $submit = $form.find([type="submit"]);
     
     $form.on('submit', $submit, function(event){
@@ -41,12 +42,12 @@ $(function() {
         var $emailInputNew = $emailInput.val();
         var $messageInputNew = $messageInput.val();
         var emailReg = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+[^<>()\.,;:\s@\"]{2,})$/;
-        var inputMessage = new Array("Twoje imię jest za krótkie", "Email nie zawiera @ lub kropki", "Wiadomość musi zawierać więcej niz 10 znaków");
+        var inputMessage = new Array("Wpisz swoje imię.", "Email nie zawiera @ lub kropki.", "Wiadomość musi zawierać więcej niż 10 znaków.");
 
         var isError = false;
         var errorMsg = '';
         
-        if ($nameInputNew.length > 5)  {
+        if ($nameInputNew.length > 1)  {
         } else {
             errorMsg += inputMessage[0] + '<br/>';
             isError = true;
@@ -68,8 +69,31 @@ $(function() {
             $error.html(errorMsg);
             return false;
         } else {
+
+			$.ajax({
+				type: "POST",
+				url: 'mail.php',
+				data: $("#contactForm").serialize(), // serializes the form's elements.
+			}).done(function(response){
+				//alert(response);
+				if(response==true)
+				{
+					$error.html("Twoja wiadomość została wysłana.");
+					$nameInput.val('');
+					$emailInput.val('');
+					$messageInput.val('');
+				}
+
+			}).fail(function(error) {
+				
+			})
+		
+	
+		
+		
             $error.html('');
             return true;
-        }       
+        }  
+		return false;
     })
 });

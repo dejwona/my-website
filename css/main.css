@@ -317,7 +317,7 @@ ul {
     z-index: 1000;
     position: absolute;
     top:50%;
-    left:27%;
+    left:32%;
     font-size: 1.5em;
     font-family: 'BebasNeue', Arial, sans-serif;
 }
@@ -332,6 +332,16 @@ ul {
     font-size: 1.5em;
     font-family: 'BebasNeue', Arial, sans-serif;
     font-weight: 100;
+}
+.newInfo a, {
+    color:black;
+}
+.newInfo a, .newInfo a:hover {
+    color:black;
+    text-decoration: none;
+}
+.newInfo a:hover {
+    color: #b60404;
 }
 .gallery {
     display: -webkit-flex;

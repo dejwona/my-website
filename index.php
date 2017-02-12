@@ -198,17 +198,16 @@
                             <h3>Email: iwograf@gmail.com</h3>
                             <h3>Tel: 692 726 007</h3>
                         </div>
-                        <form id="contactForm" method="post" class="infoForm" action="mail.php">
-							<div class="confirm"></div>
+                        <form id="ssscontactForm" method="post" class="infoForm" action="mail.php">
                             <h1>Formularz</h1>
                             <p>Imię</p>
                             <input id="nameInput" class="form" type="text" name="name" placeholder="Imię">
-                            <p>Email</p>
+                            <p>Nazwisko</p>
                             <input id="emailInput" class="form" type="text" name="email" placeholder="Email">
                             <p>Treść</p>
                             <textarea id="messageInput" class="form area" type="textarea" name="message"   placeholder="Treść wiadomości"></textarea>
                             <div class="error"></div>
-                            <button class="form" name="submit" type="submit">Wyślij</button>
+                            <button class="form" name="dddsubmit" type="submit">Wyślij</button>
                         </form>
                     </div>
                 </div>
@@ -220,16 +219,16 @@
         </div>
         <script src="./external/jquery-3.1.1.min.js"></script>
         <script src="./js/app.js"></script>
-        <link rel="stylesheet" type="text/css" href="./css/jquery.fullpage.css" />
-        <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+        <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- This following line is optional. Only necessary if you use the option css3:false and you want to use other easing effects rather than "linear", "swing" or "easeInOutCubic". -->
-        <script src="./js/jquery.easings.min.js"></script>
+        <script src="js/jquery.easings.min.js"></script>
         <!-- This following line is only necessary in the case of using the plugin option `scrollOverflow:true` -->
-        <script type="text/javascript" src="./js/scrolloverflow.min.js"></script>       
+        <script type="text/javascript" src="js/scrolloverflow.min.js"></script>       
         <!--<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>-->
-        <script type="text/javascript" src="./js/jquery.fullpage.js"></script>
-        <script src="./js/plugins.js"></script>
-        <script src="./js/main.js"></script>
+        <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
 
     </body>
 </html>
